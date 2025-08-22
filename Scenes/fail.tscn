@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://g0dxm35qux3a"]
+
+[node name="Fail" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4, 0.4, 0.4, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.303125
+anchor_top = 0.329167
+anchor_right = 0.596875
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "You Failed"
+metadata/_edit_use_anchors_ = true

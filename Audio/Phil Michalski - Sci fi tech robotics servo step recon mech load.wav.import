@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjc6u4r1k705t"
+path="res://.godot/imported/Phil Michalski - Sci fi tech robotics servo step recon mech load.wav-1206b2c3d1931ef94baf41ee6c2960c1.sample"
+
+[deps]
+
+source_file="res://Audio/Phil Michalski - Sci fi tech robotics servo step recon mech load.wav"
+dest_files=["res://.godot/imported/Phil Michalski - Sci fi tech robotics servo step recon mech load.wav-1206b2c3d1931ef94baf41ee6c2960c1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

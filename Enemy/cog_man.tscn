@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://buympiu0584q2"]
+
+[ext_resource type="Script" path="res://Enemy/CharacterBody3D.gd" id="1_83sbf"]
+[ext_resource type="PackedScene" uid="uid://cyt5onbvbmuj" path="res://Enemy/cog_man_walk.tscn" id="2_x4vy4"]
+[ext_resource type="AudioStream" uid="uid://bjc6u4r1k705t" path="res://Audio/Phil Michalski - Sci fi tech robotics servo step recon mech load.wav" id="3_y56b2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mt5oe"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vq5xf"]
+radius = 1.0
+
+[node name="CogMan" type="Node3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["enemy"]]
+script = ExtResource("1_83sbf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.30724, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_mt5oe")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D"]
+transform = Transform3D(-1, 3.19744e-14, 8.74228e-08, 2.26267e-08, 0.965926, 0.258819, -8.44439e-08, 0.258819, -0.965926, 0, 0.782601, 1.38644)
+light_color = Color(1, 0, 0, 1)
+light_energy = 6.0
+light_indirect_energy = 5.0
+light_volumetric_fog_energy = 6.0
+light_size = 1.0
+light_specular = 5.0
+spot_range = 10.0
+spot_attenuation = 3.73213
+spot_angle = 50.0
+
+[node name="Area3D" type="Area3D" parent="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Area3D"]
+shape = SubResource("SphereShape3D_vq5xf")
+
+[node name="CogManWalk" parent="CharacterBody3D" instance=ExtResource("2_x4vy4")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
+stream = ExtResource("3_y56b2")
+volume_db = -20.0
+autoplay = true
+
+[connection signal="body_entered" from="CharacterBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]

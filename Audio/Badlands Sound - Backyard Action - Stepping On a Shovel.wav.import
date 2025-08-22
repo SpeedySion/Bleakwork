@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://byeu7x65tgk8r"
+path="res://.godot/imported/Badlands Sound - Backyard Action - Stepping On a Shovel.wav-9e45c53e74ca535bb1bfb5f0406d71b0.sample"
+
+[deps]
+
+source_file="res://Audio/Badlands Sound - Backyard Action - Stepping On a Shovel.wav"
+dest_files=["res://.godot/imported/Badlands Sound - Backyard Action - Stepping On a Shovel.wav-9e45c53e74ca535bb1bfb5f0406d71b0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://brcncern4xv2"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_5bjp2"]
+[ext_resource type="AudioStream" uid="uid://daksq83hc8qgn" path="res://Audio/Barney Oram - Spacesuit - Astronaut Breathing Fast Through Large Helmet .wav" id="2_1r6yt"]
+[ext_resource type="AudioStream" uid="uid://byeu7x65tgk8r" path="res://Audio/Badlands Sound - Backyard Action - Stepping On a Shovel.wav" id="3_1pukp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_owof2"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_5bjp2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_owof2")
+
+[node name="Rotator" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Rotator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506865, 0.304975)
+light_color = Color(0.964706, 0.686275, 0.427451, 1)
+light_energy = 6.0
+light_volumetric_fog_energy = 2.0
+spot_range = 10.0
+spot_attenuation = 0.225313
+spot_angle = 30.0
+
+[node name="Camera3D" type="Camera3D" parent="Rotator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.460416, 0)
+
+[node name="Breathing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1r6yt")
+volume_db = -15.0
+autoplay = true
+
+[node name="Stepping" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1pukp")
+volume_db = -15.0
+
+[node name="StepTimer" type="Timer" parent="."]
